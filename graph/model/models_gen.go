@@ -2,6 +2,17 @@
 
 package model
 
+type CreateUserInput struct {
+	FirstName  string  `json:"firstName"`
+	MiddleName *string `json:"middleName,omitempty"`
+	LastName   string  `json:"lastName"`
+	Email      string  `json:"email"`
+	Phone      *string `json:"phone,omitempty"`
+	Province   *string `json:"province,omitempty"`
+	Ward       *string `json:"ward,omitempty"`
+	Password   string  `json:"password"`
+}
+
 type Mutation struct {
 }
 
@@ -20,8 +31,32 @@ type Todo struct {
 	User *User  `json:"user"`
 }
 
+type UpdateUserInput struct {
+	FirstName  *string `json:"firstName,omitempty"`
+	MiddleName *string `json:"middleName,omitempty"`
+	LastName   *string `json:"lastName,omitempty"`
+	Phone      *string `json:"phone,omitempty"`
+	Province   *string `json:"province,omitempty"`
+	Ward       *string `json:"ward,omitempty"`
+}
+
 type User struct {
-	ID    string `json:"id"`
-	Name  string `json:"name"`
-	Email string `json:"email"`
+	ID         string  `json:"id"`
+	FirstName  string  `json:"firstName"`
+	MiddleName *string `json:"middleName,omitempty"`
+	LastName   string  `json:"lastName"`
+	Email      string  `json:"email"`
+	Phone      *string `json:"phone,omitempty"`
+	Province   *string `json:"province,omitempty"`
+	Ward       *string `json:"ward,omitempty"`
+	CreatedAt  string  `json:"createdAt"`
+	UpdatedAt  string  `json:"updatedAt"`
+}
+
+type UserPagination struct {
+	Items       []*User `json:"items"`
+	TotalItems  int32   `json:"totalItems"`
+	TotalPages  int32   `json:"totalPages"`
+	CurrentPage int32   `json:"currentPage"`
+	PageSize    int32   `json:"pageSize"`
 }

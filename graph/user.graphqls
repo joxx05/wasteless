@@ -46,12 +46,12 @@ type UserPagination {
   currentPage: Int!
   pageSize: Int!
 }
-type Query {
+extend type Query {
     getUser(id: ID!): User
     listUsers(page: Int! = 1, limit: Int! = 10): UserPagination!
 }
 
-type Mutation {
+extend type Mutation {
     createUser(input: CreateUserInput!): User!
     updateUser(id: ID!, input: UpdateUserInput!): User!
     deleteUser(id: ID!): Boolean!
