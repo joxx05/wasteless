@@ -1,10 +1,11 @@
-module wasteless
+module github.com/joxx05/wasteless
 
 go 1.25.3
 
 require (
 	github.com/99designs/gqlgen v0.17.84
 	github.com/jackc/pgx/v5 v5.7.6
+	github.com/joho/godotenv v1.5.1
 	github.com/vektah/gqlparser/v2 v2.5.31
 )
 

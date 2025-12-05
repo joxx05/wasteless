@@ -8,7 +8,8 @@ package graph
 import (
 	"context"
 	"fmt"
-	"wasteless/graph/model"
+
+	"github.com/joxx05/wasteless/graph/model"
 )
 
 // CreateTodo is the resolver for the createTodo field.

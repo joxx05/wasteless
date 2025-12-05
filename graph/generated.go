@@ -11,10 +11,10 @@ import (
 	"strconv"
 	"sync"
 	"sync/atomic"
-	"wasteless/graph/model"
 
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/introspection"
+	"github.com/joxx05/wasteless/graph/model"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 )
@@ -286,7 +286,7 @@ var parsedSchema = gqlparser.MustLoadSchema(sources...)
 func (ec *executionContext) field_Mutation_createTodo_args(ctx context.Context, rawArgs map[string]any) (map[string]any, error) {
 	var err error
 	args := map[string]any{}
-	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "input", ec.unmarshalNNewTodo2wastelessᚋgraphᚋmodelᚐNewTodo)
+	arg0, err := graphql.ProcessArgField(ctx, rawArgs, "input", ec.unmarshalNNewTodo2githubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐNewTodo)
 	if err != nil {
 		return nil, err
 	}
@@ -368,7 +368,7 @@ func (ec *executionContext) _Mutation_createTodo(ctx context.Context, field grap
 			return ec.resolvers.Mutation().CreateTodo(ctx, fc.Args["input"].(model.NewTodo))
 		},
 		nil,
-		ec.marshalNTodo2ᚖwastelessᚋgraphᚋmodelᚐTodo,
+		ec.marshalNTodo2ᚖgithubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐTodo,
 		true,
 		true,
 	)
@@ -418,7 +418,7 @@ func (ec *executionContext) _Query_todos(ctx context.Context, field graphql.Coll
 			return ec.resolvers.Query().Todos(ctx)
 		},
 		nil,
-		ec.marshalNTodo2ᚕᚖwastelessᚋgraphᚋmodelᚐTodoᚄ,
+		ec.marshalNTodo2ᚕᚖgithubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐTodoᚄ,
 		true,
 		true,
 	)
@@ -652,7 +652,7 @@ func (ec *executionContext) _Todo_user(ctx context.Context, field graphql.Collec
 			return obj.User, nil
 		},
 		nil,
-		ec.marshalNUser2ᚖwastelessᚋgraphᚋmodelᚐUser,
+		ec.marshalNUser2ᚖgithubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐUser,
 		true,
 		true,
 	)
@@ -2845,7 +2845,7 @@ func (ec *executionContext) marshalNID2string(ctx context.Context, sel ast.Selec
 	return res
 }
 
-func (ec *executionContext) unmarshalNNewTodo2wastelessᚋgraphᚋmodelᚐNewTodo(ctx context.Context, v any) (model.NewTodo, error) {
+func (ec *executionContext) unmarshalNNewTodo2githubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐNewTodo(ctx context.Context, v any) (model.NewTodo, error) {
 	res, err := ec.unmarshalInputNewTodo(ctx, v)
 	return res, graphql.ErrorOnPath(ctx, err)
 }
@@ -2866,11 +2866,11 @@ func (ec *executionContext) marshalNString2string(ctx context.Context, sel ast.S
 	return res
 }
 
-func (ec *executionContext) marshalNTodo2wastelessᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2githubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v model.Todo) graphql.Marshaler {
 	return ec._Todo(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNTodo2ᚕᚖwastelessᚋgraphᚋmodelᚐTodoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2ᚕᚖgithubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐTodoᚄ(ctx context.Context, sel ast.SelectionSet, v []*model.Todo) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -2894,7 +2894,7 @@ func (ec *executionContext) marshalNTodo2ᚕᚖwastelessᚋgraphᚋmodelᚐTodo�
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNTodo2ᚖwastelessᚋgraphᚋmodelᚐTodo(ctx, sel, v[i])
+			ret[i] = ec.marshalNTodo2ᚖgithubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐTodo(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -2914,7 +2914,7 @@ func (ec *executionContext) marshalNTodo2ᚕᚖwastelessᚋgraphᚋmodelᚐTodo�
 	return ret
 }
 
-func (ec *executionContext) marshalNTodo2ᚖwastelessᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
+func (ec *executionContext) marshalNTodo2ᚖgithubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐTodo(ctx context.Context, sel ast.SelectionSet, v *model.Todo) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")
@@ -2924,7 +2924,7 @@ func (ec *executionContext) marshalNTodo2ᚖwastelessᚋgraphᚋmodelᚐTodo(ctx
 	return ec._Todo(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNUser2ᚖwastelessᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
+func (ec *executionContext) marshalNUser2ᚖgithubᚗcomᚋjoxx05ᚋwastelessᚋgraphᚋmodelᚐUser(ctx context.Context, sel ast.SelectionSet, v *model.User) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			graphql.AddErrorf(ctx, "the requested element is null which the schema does not allow")

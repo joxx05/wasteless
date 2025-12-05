@@ -1,0 +1,58 @@
+type User {
+    id: ID!
+    firstName: String!
+    middleName: String
+    lastName: String!
+
+    email: String!
+    phone: String
+
+    province: String
+    ward: String
+
+    createdAt: String!
+    updatedAt: String!
+}
+
+# Input khi tạo user
+input CreateUserInput {
+    firstName: String!
+    middleName: String
+    lastName: String!
+
+    email: String!
+    phone: String
+
+    province: String
+    ward: String
+
+    password: String!
+}
+
+# Input khi update user
+input UpdateUserInput {
+    firstName: String
+    middleName: String
+    lastName: String
+
+    phone: String
+    province: String
+    ward: String
+}
+type UserPagination {
+  items: [User!]!
+  totalItems: Int!
+  totalPages: Int!
+  currentPage: Int!
+  pageSize: Int!
+}
+type Query {
+    getUser(id: ID!): User
+    listUsers(page: Int! = 1, limit: Int! = 10): UserPagination!
+}
+
+type Mutation {
+    createUser(input: CreateUserInput!): User!
+    updateUser(id: ID!, input: UpdateUserInput!): User!
+    deleteUser(id: ID!): Boolean!
+}
